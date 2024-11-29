@@ -5,10 +5,10 @@ const {CreateProduct,
     getProducts,
     deleteProducts,
     updateProduct
-}=require('../controllers/productController')
+}=require('../controller/productsController')
 const router = express.Router()
 
-const Product =require("../models/productModel")
+const Product =require("../models/productsModel")
 
 
 //GET all products
