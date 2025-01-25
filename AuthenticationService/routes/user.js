@@ -3,7 +3,7 @@ const express = require('express')
 
 const router = express.Router()
 
-//logom route
+//login route
 
 router.post('/login',loginUser)
 
