@@ -54,3 +54,5 @@ router.delete("/products/:id", async (req, res) => {
         res.status(500).json({error: "products service is unavailable"})
     }
 });
+
+module.exports = router

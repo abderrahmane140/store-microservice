@@ -7,5 +7,5 @@ app.use(express.json());
 
 
 app.listen(process.env.PORT, () => {
-    console.log("listen to port ", process.env.PORT);
+    console.log("listen to port", process.env.PORT);
 })

@@ -54,3 +54,5 @@ router.delete("/order/:id", async (req, res) => {
         res.status(500).json({error: "Order service is unavailable"})
     }
 });
+
+module.exports = router
