@@ -8,7 +8,7 @@ const ORDER_SERVICE_URL = process.env.ORDER_SERVICE_URL;
 //create the order
 router.post("/orders", async (req, res) => {
     try{
-        const response = await axios.post(`${ORDER_SERVICE_URL}/orders`, req.body);
+        const response = await axios.post(`${ORDER_SERVICE_URL}/api/order`, req.body);
         res.json(response.data);
     }catch(error){
         res.status(500).json({error: "Order service is unavailable"})
@@ -16,9 +16,9 @@ router.post("/orders", async (req, res) => {
 });
 
 //get all the order
-router.get("/orders", async (req, res) => {
+router.get("/order", async (req, res) => {
     try{
-        const response = await axios.get(`${ORDER_SERVICE_URL}/orders`);
+        const response = await axios.get(`${ORDER_SERVICE_URL}/api/order`);
         res.json(response.data);
     }catch(error){
         res.status(500).json({error: "Order service is unavailable"})
@@ -28,7 +28,7 @@ router.get("/orders", async (req, res) => {
 //get the order by id
 router.get("/order/:id", async (req, res) => {
     try{
-        const response = await axios.get(`${ORDER_SERVICE_URL}/orders/${req.params.id}`);
+        const response = await axios.get(`${ORDER_SERVICE_URL}/api/order/${req.params.id}`);
         res.json(response.data);
     }catch(error){
         res.status(500).json({error: "Order service is unavailable"})
@@ -36,9 +36,9 @@ router.get("/order/:id", async (req, res) => {
 });
 
 //update order
-router.put("/order/:id", async (req, res) => {
+router.patch("/order/:id", async (req, res) => {
     try{
-        const response = await axios.put(`${ORDER_SERVICE_URL}/orders/${req.params.id}`,req.body);
+        const response = await axios.patch(`${ORDER_SERVICE_URL}/api/order/${req.params.id}`,req.body);
         res.json(response.data);
     }catch(error){
         res.status(500).json({error: "Order service is unavailable"})
@@ -48,7 +48,7 @@ router.put("/order/:id", async (req, res) => {
 //delete a order
 router.delete("/order/:id", async (req, res) => {
     try{
-        const response = await axios.delete(`${ORDER_SERVICE_URL}/orders/${req.params.id}`);
+        const response = await axios.delete(`${ORDER_SERVICE_URL}/api/order/${req.params.id}`);
         res.json(response.data);
     }catch(error){
         res.status(500).json({error: "Order service is unavailable"})
