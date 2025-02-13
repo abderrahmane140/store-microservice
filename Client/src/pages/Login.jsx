@@ -1,49 +1,18 @@
 import { useState } from "react"
-import usesignup from "../hooks/usesignup"
+import uselogin from "../hooks/uselogin"
 import {Link} from "react-router-dom"
 
-const Signup = () => {
+const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [username, setUsername] = useState('')
-    const {signup,error,isLoading} = usesignup()
-
+    const {login,error,isLoading} = uselogin()
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await signup(username,email,password)
-    }
-    
-    return (
-        // <form className="signup" onSubmit={handleSubmit}>
-        // <h3>Sign Up</h3>
         
+        await login(email,password)
+    }
 
-        // <input 
-        //     type="username" 
-        //     onChange={(e) => setUsername(e.target.value)} 
-        //     value={username}
-        //     placeholder="Username" 
-        // />
-
-        // <input 
-        //     type="email" 
-        //     onChange={(e) => setEmail(e.target.value)} 
-        //     value={email} 
-        //     placeholder="Email" 
-        // />
-
-        // <input 
-        //     type="password" 
-        //     onChange={(e) => setPassword(e.target.value)} 
-        //     value={password} 
-        //     placeholder="Password" 
-        // />
-
-        // <button disabled={isLoading}>{isLoading?"LOADING...":"SIGN UP"}</button>
-        // <span className="m-2">Already have a account?</span>
-        // <Link style={{textDecoration:"none",fontWeight:"600"}} to='/login' >Log in</Link>
-        // {error && <div className="error">{error}</div>}
-        // </form>
+    return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
@@ -55,23 +24,6 @@ const Signup = () => {
           <form  className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-                Username
-              </label>
-              <div className="mt-2">
-                <input
-                  onChange={(e) => setUsername(e.target.value)} 
-                  value={username}
-                  type="uername"
-                  required
-                  placeholder="Username"
-                  autoComplete="username"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
                 Email address
               </label>
               <div className="mt-2">
@@ -80,7 +32,7 @@ const Signup = () => {
                   value={email}
                   type="email"
                   required
-                  placeholder="Email"
+                  placeholder="Email address"
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -92,6 +44,11 @@ const Signup = () => {
                 <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
                   Password
                 </label>
+                <div className="text-sm">
+                  <a href="#" className="font-semibold text-cyan-600 hover:text-cyan-500">
+                    Forgot password?
+                  </a>
+                </div>
               </div>
               <div className="mt-2">
                 <input
@@ -117,9 +74,9 @@ const Signup = () => {
           </form>
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
-          Already have a account?{' '}
-            <Link to="/login" className="font-semibold text-cyan-600 hover:text-cyan-500">
-                log In
+          Don't have an account?{' '}
+            <Link to="/signup" className="font-semibold text-cyan-600 hover:text-cyan-500">
+                Create One
             </Link>
           </p>
         </div>
@@ -128,4 +85,4 @@ const Signup = () => {
     )
 }
 
-export default Signup
+export default Login
