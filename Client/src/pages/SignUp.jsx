@@ -14,36 +14,6 @@ const Signup = () => {
     }
     
     return (
-        // <form className="signup" onSubmit={handleSubmit}>
-        // <h3>Sign Up</h3>
-        
-
-        // <input 
-        //     type="username" 
-        //     onChange={(e) => setUsername(e.target.value)} 
-        //     value={username}
-        //     placeholder="Username" 
-        // />
-
-        // <input 
-        //     type="email" 
-        //     onChange={(e) => setEmail(e.target.value)} 
-        //     value={email} 
-        //     placeholder="Email" 
-        // />
-
-        // <input 
-        //     type="password" 
-        //     onChange={(e) => setPassword(e.target.value)} 
-        //     value={password} 
-        //     placeholder="Password" 
-        // />
-
-        // <button disabled={isLoading}>{isLoading?"LOADING...":"SIGN UP"}</button>
-        // <span className="m-2">Already have a account?</span>
-        // <Link style={{textDecoration:"none",fontWeight:"600"}} to='/login' >Log in</Link>
-        // {error && <div className="error">{error}</div>}
-        // </form>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
